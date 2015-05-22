@@ -1,0 +1,13 @@
+.displayNone {
+    display: none !important;
+}
+nav {
+    height: 100px;
+}
+nav h1 {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+nav h1 a:hover {
+    text-decoration: none;
+}

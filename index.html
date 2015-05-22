@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<title></title>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+		<link rel="stylesheet" href="/css/reset.css">
+		<link rel="stylesheet" href="/css/LoginSystem.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">	
+
+	</head>
+	<body>
+
+		
+	<div class="row">
+		<div class="container">
+			<nav>
+				<div class="container">
+		      		<div class="home">
+		        		<h1><i class="fa fa-whatsapp fa-2x"></i><a>Angularbook</a></h1>
+		      		</div>
+	      		</div>
+			</nav>
+			
+			<div class="row">
+                <div id="errorSignIn" class="alert alert-error displayNone">
+                    <button class="close"type="button">×</button> <strong>Access Denied!</strong>
+                    Please provide valid authorization.
+                </div>
+				<div id="successSignUp" class="alert alert-success displayNone">
+                    <button class="close" type="button">×</button> 
+                    <strong>Confirmation:</strong>A confirmation email has been sent to your email.<br> Thank you for your registration. 
+                </div>
+                <div id="successSignIn" class="alert alert-success displayNone">
+                    <button class="close" type="button">×</button> 
+                    <strong>Congratulations:</strong> Thank you for your login. 
+                </div>
+                <div id="errorSignUp" class="alert alert-danger displayNone">
+                    <button class="close" type="button">×</button>
+                    <strong>Error:</strong>Try to pass a new Username.
+                </div>
+			</div>
+
+			<div class="row">
+				<div class="container">
+				    <div class="row-fluid">
+				        <div class="span12">
+				            <div class="span6">
+				                <div class="area">
+				                    <form name="signInForm" class="form-horizontal">
+				                        <div class="heading">
+				                            <h4 class="form-heading">Sign In</h4>
+				                        </div>
+	
+				                        <div class="control-group">
+				                            <label class="control-label" for=
+				                            "signInUsername">Username</label>
+				
+				                            <div class="controls">
+				                                <input id="signInUsername" placeholder=
+				                                "E.g. johnyWalky" type="text">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <label class="control-label" for=
+				                            "signInPassword">Password</label>
+				
+				                            <div class="controls">
+				                                <input id="signInPassword" placeholder=
+				                                "Min.8 Characters" type="password">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <div class="controls">
+				                                <label class="checkbox"><input type="checkbox">
+				                                Keep me signed in |<a class="btn btn-link"
+				                                href="#">Forgot my password</a></label>
+				                                
+				                                <a class="btn btn-info" id="signInBtn">Sign In</a>
+				                            </div>
+				                        </div>
+				                    </form>
+				                </div>
+				            </div>
+				
+				            <div class="span6">
+				                <div class="area">
+				                    <form class="form-horizontal">
+				                        <div class="heading">
+				                            <h4 class="form-heading">Sign Up</h4>
+				                        </div>
+				                        <div class="control-group">
+				                            <label class="control-label" for="inputFirst">First
+				                            Name</label>
+				
+				                            <div class="controls">
+				                                <input id="inputFirst" placeholder=
+				                                "E.g. Johny" type="text">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <label class="control-label" for="inputLast">Last
+				                            Name</label>
+				
+				                            <div class="controls">
+				                                <input id="inputLast" placeholder="E.g. Walker"
+				                                type="text">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <label class="control-label" for=
+				                            "inputEmail">Email</label>
+				
+				                            <div class="controls">
+				                                <input id="inputEmail" placeholder=
+				                                "E.g. johny@walker.com" type="text">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <label class="control-label" for=
+				                            "inputUser">Username</label>
+				
+				                            <div class="controls">
+				                                <input id="inputUser" placeholder=
+				                                "E.g. johnyWalky" type="text">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <label class="control-label" for=
+				                            "inputPassword">Password</label>
+				
+				                            <div class="controls">
+				                                <input id="inputPassword" placeholder=
+				                                "Min.8 Characters" type="password">
+				                            </div>
+				                        </div>
+				
+				                        <div class="control-group">
+				                            <div class="controls">
+				                                <label class="checkbox">
+				                                	<input type="checkbox">I agree <a href="#">Terms of Services</a></label> 
+				                                	<a id="signUpBtn" class="btn btn-success" type="submit">Sign Up</a>
+				                            </div>
+				                        </div>
+				                    </form>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			
+			<footer class="container">
+				<hr>
+	     	<p>Copyright © Your Website | <a href="">Privacy Policy</a> | <a href="">Terms of Use</a></p>
+			</footer>
+		</div>
+	</div>		
+		
+		
+		
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<!--<script src="/js/angular.min.js"></script>-->
+	</body>
+</html>

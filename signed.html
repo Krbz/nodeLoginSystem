@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/reset.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+		<!--<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">	
+
+		<script>
+			window.onload = function() {
+				var socket = io.connect();
+			}
+
+			
+			
+			
+			// function ChatController($scope) {
+				
+
+			//   $scope.messages = [];
+			//   $scope.roster = [];
+			//   $scope.name = '';
+			//   $scope.text = '';
+
+			//   socket.on('connect', function () {
+			//     $scope.setName();
+			//   });
+
+			//   socket.on('message', function (msg) {
+			//     $scope.messages.push(msg);
+			//     $scope.$apply();
+			//   });
+
+			//   socket.on('roster', function (names) {
+			//     $scope.roster = names;
+			//     $scope.$apply();
+			//   });
+
+			//   $scope.send = function send() {
+			//     console.log('Sending message:', $scope.text);
+			//     socket.emit('message', $scope.text);
+			//     $scope.text = '';
+			//   };
+
+			//   $scope.setName = function setName() {
+			//     socket.emit('identify', $scope.name);
+			//   };
+			// }
+		</script>
+	</head>
+	<body>
+		
+		<nav>
+			<div class="siteContent">
+				<div class="home">
+					<h1><i class="fa fa-whatsapp fa-2x"></i><a>Angularbook</a></h1>
+				</div>
+				<div class="searching">
+						<input type="text" placeholder="Search for post...">
+					<input type="button" value="Search it">
+				</div>
+				<div class="settings">
+					<a href="" title="">
+						<i title="Settings"class="fa fa-cog"></i>
+					</a>
+					<div class="cog-select displayNone">
+						<ul>
+							<li><a href="" title=""><i class="fa fa-user"></i>Mój profil</a></li>
+							<li><a href="" title=""><i class="fa fa-cog"></i>Settings</a></li>
+							<li><a href="" title=""><i class="fa fa-exclamation-triangle"></i>Report lorem error</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		
+		<div class="siteContent"> 
+			<div class="cockpit">
+				<div class="mainThread">
+					<img src="assets/img/avatar.jpg" alt="Avatar" class="user-avatar">
+					<div class="headerThread">
+						<p><a href="#" title="" class="username">Asian</a></p>
+						<p><a href="#" title="Edit profile">Edytuj profil</a></p>
+					</div>
+				</div>
+				<div>
+					<div class="panel">
+						<h3>Grupy</h3>
+						<a href="#" title="JS News: Jobs"><i class="fa fa-users"></i>JS News: Jobs</a>
+						<a href="#" title="JS News: After hours"><i class="fa fa-users"></i>JS News: After hours</a>
+						<a href="#" title="JS News"><i class="fa fa-users"></i>JS News</a>
+						<a href="#" title="AngularJS Polska"><i class="fa fa-users"></i>AngularJS Polska</a>
+						<a href="#" title="Utwórz grupę"><i class="fa fa-users"></i>Utwórz grupę</a>
+					</div>
+					<div class="panel">
+						<h3>Aplikacje</h3>
+						<a href="#" title="Gry"><i class="fa fa-gamepad"></i>Gry</a>
+						<a href="#" title="Tego dnia"><i class="fa fa-gamepad"></i>Tego dnia</a>
+						<a href="#" title="Wyczesana gra"><i class="fa fa-gamepad"></i>Wyczesana gra</a>
+						<a href="#" title="Zaczepki"><i class="fa fa-gamepad"></i>Zaczepki</a>
+						<a href="#" title="Compton official"><i class="fa fa-gamepad"></i>Compton official</a>
+					</div>
+					<div class="panel">
+						<h3>Wydarzenia</h3>
+						<a href="#" title="GRIEVED | 19.04.2015 | POZNAŃ | POD MINOGĄ"><i class="fa fa-calendar-o"></i>GRIEVED | 19.04.2015 | POZNAŃ | POD MINOGĄ</a>
+						<a href="#" title="Uwolnić zatrzymanych! Dość represji za marihuanę!"><i class="fa fa-calendar-o"></i>Uwolnić zatrzymanych! Dość represji za marihuanę!</a>
+					</div>
+				</div>
+			</div>
+			<!---->
+			<div class="postContent">
+				<div class="container">
+		      <div class="newPostForm">
+		        <div class="row">
+		          <ul>
+		            <li>
+		              <i class="fa fa-paper-plane"></i>
+		              <a ng-click="writePost = true; addMedia = false;" title="#">Write post</a>
+		            </li>
+		            <li>
+		              <i class="fa fa-file-image-o"></i>
+		              <a ng-click="writePost = false; addMedia = true; inputStyle={}" title="#">Add Photo / Video</a>
+		            </li>
+		          </ul>
+		          <div class="newPostArea">
+		            <form name="newPostForm">
+		              <span ng-show="writePost"></span>
+		              <div>
+		                <textarea
+		                  id="postMessage"                   
+		                  ng-style="inputStyle" 
+		                  ng-focus="inputStyle={'height':'50px'}" 
+		                  ng-blur="inputStyle={'height':'15px'}" 
+		                  ng-show="writePost" 
+		                  placeholder="What is up today ?"
+		                  min-length
+		                  ></textarea>
+		                  <i class="fa fa-paper-plane-o"></i>
+		              </div>
+		              <input 
+		                ng-show="addMedia" 
+		                type="file" 
+		                name="" value="" placeholder="">
+		              <input 
+		                ng-show="addMedia"
+		                type="submit" name="" value="Post it!">              
+		            </form>
+		          </div>
+		        </div>    
+		      </div>
+		    </div>
+		    
+		    <div class="container" ng-repeat="post in posts" ng-if="post.chat === false">
+		      <div class="row">
+		          <div class="newsContainer">
+		            <div class="mainThread">
+		              <img src="assets/img/avatar.jpg" alt="Avatar" class="user-avatar">
+		              <div class="headerThread">
+		                <h3 class="post-title"><a href="#" title="{{post.user}}" class="username">{{post.user}}</a> shared <span>a post</span></h3>
+		                <p class="post-date">{{post.data}}</p>
+		              </div>
+		            </div>
+		            <div class="contentThread">
+		              <p>{{post.text}}</p>
+		            </div>
+		
+		            <div class="postLikeContent">
+		              <p><a href="#" title="Like it!">Like it!</a></p>
+		              <p><a href="#" title="Comment it!">Comment it!</a></p>
+		              <div>
+		                <p><i class="fa fa-thumbs-o-up fa-08"></i><span>19</span></p>
+		                <p><i class="fa fa-comment-o fa-08"></i><span>2</span></p>
+		              </div>
+		            </div>
+		
+		          </div>
+		      </div>
+		    </div>
+		    <!---->
+			</div>
+			<div class="aside">
+			
+			  <a href="" title="">
+			    <div class="birthday">
+			      <img src="assets/img/birthday-present-clip-art-1552-0911-2122-3733.jpg" alt="birthday cake">
+			      <div class="birthdayContent">
+			        <h2><a title="{{uName}} profile" class="username">Asia</a> got birthday</h2>
+			      </div>      
+			    </div>
+			  </a>
+			
+			  <a href="" title="">
+			    <div class="adContainer">
+			      <img src="assets/img/facebook-ads-icon1.png" alt="facebook ad">
+			      <div class="adContent">
+			        <h2 class="username">SuperAwesome</h2>
+			        <p>The new facebook is coming !</p>
+			      </div>      
+			    </div>
+			  </a>
+			    
+			
+			  </div>
+			
+		<!-- siteContent end-->
+		</div>
+		
+		
+		<div id="chat-container" >
+		  <div id="chat-content">
+			  
+			    <div id="mainHeader" ng-click="changeClass(); chatHide = !chatHide">
+			      <i class="fa fa-users"></i>
+			      <h2>Awesome angular chat</h2>
+			      <i class="fa" ng-class="toggleClass" id="chatToggler"></i>    
+			    </div>
+			
+			    <ul class="isolateScroll" ng-hide="chatHide" scroll-glue="!glued">
+			      <li ng-repeat="object in objects" ng-if="object.chat === true">
+			        <p class="userMsg">
+			          <div ng-class="(object.user==uName) ? 'floatRight' : 'left'">
+			            <img src="assets/img/avatar.jpg" alt="Avatar" class="user-avatar" title="{{object.user}}">
+			          </div>
+			          <div ng-class="object.user === 'Javascript' ? 'chatRight' : 'right'" >
+			            <span class="msg" title="{{object.user}}">{{object.text}}</span> 
+			          </div>
+			        </p>
+			      </li>
+			    </ul>
+			
+			    <div ng-hide="chatHide">
+			      <!-- <input type="text" ng-model="newMessage.user" placeholder="Write message here"> -->
+			
+			      <input type="text" ng-model="newMessage.text" placeholder="Write message here">
+			      <button ng-click="insert(newMessage)"><i class="fa fa-paper-plane"></i></button>
+			    </div>
+			
+			  </div>
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		<script src="/socket.io/socket.io.js"></script>
+		<!--<script src="/js/jquery.min.js"></script>-->
+		<script src="/js/main.js"></script>
+		<!--<script src="/js/bootstrap.min.js"></script>-->
+		<script src="https://cdn.rawgit.com/Luegg/angularjs-scroll-glue/v2.0.4/src/scrollglue.js"></script>
+		<!--<script src="/js/angular.min.js"></script>-->
+	</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "LoginSystemNodeJS",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "repository": "",
+  "author": "",
+  "dependencies": {
+    "bootstrap": "latest",
+    "express": "latest",
+    "socket.io": "latest",
+    "express-session": "latest",
+    "mongoose": "latest",
+    "mongodb": "latest",
+    "stylus":"latest",
+    "jade": "latest",
+    "nodemon": "latest",
+    "socket.io": "latest",
+    "materialize-css": "latest"
+  }
+}
